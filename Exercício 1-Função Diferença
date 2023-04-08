@@ -1,0 +1,23 @@
+// 1. Escreva um programa que implemente uma função que retorne a diferença entre dois números inteiros digitados pelo usuário.
+
+#include <stdio.h>
+
+int diferenca(int a, int b) {
+  return a - b;
+}
+
+int main() {
+  int num1, num2, resultado;
+
+  printf("Digite o primeiro numero: ");
+  scanf("%d", &num1);
+
+  printf("Digite o segundo numero: ");
+  scanf("%d", &num2);
+
+  resultado = diferenca(num1, num2);
+
+  printf("A diferenca entre %d e %d e: %d\n", num1, num2, resultado);
+
+  return 0;
+}

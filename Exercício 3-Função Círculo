@@ -1,0 +1,22 @@
+// 3. Escreva um programa que calcule a área de um círculo a partir de uma função especialmente desenhada para isso; essa função recebe o valor do raio e retorna a área do círculo.
+
+#include <stdio.h>
+
+#define PI 3.14159265359
+
+float calcularAreaCirculo(float raio) {
+  return PI * raio * raio;
+}
+
+int main() {
+  float raio, area;
+
+  printf("Digite o valor do raio: ");
+  scanf("%f", &raio);
+
+  area = calcularAreaCirculo(raio);
+
+  printf("A area do circulo de raio %.2f e: %.2f\n", raio, area);
+
+  return 0;
+}

@@ -1,0 +1,58 @@
+// 4. Crie um sistema de caixa eletrônico, utilizando menus (switch) e outros recursos, que realizem operações financeiras a partir de funções especificamente projetadas para tal. Lembre-se de que o caixa eletrônico é um programa que roda como repetição contínua, até que o usuário decida encerrar as operações. Operações: Depósito, Saque e Saldo.
+
+#include <stdio.h>
+
+float saldo = 0.0;
+
+void deposito() {
+  float valor;
+  printf("\nDigite o valor do deposito: R$");
+  scanf("%f", &valor);
+  saldo += valor;
+  printf("\nDeposito realizado com sucesso!\n");
+}
+
+void saque() {
+  float valor;
+  printf("\nDigite o valor do saque: R$");
+  scanf("%f", &valor);
+  if (valor > saldo) {
+    printf("\nSaldo insuficiente.\n");
+  } else {
+    saldo -= valor;
+    printf("\nSaque realizado com sucesso!\n");
+  }
+}
+
+void verSaldo() {
+  printf("\nSaldo atual: R$%.2f\n", saldo);
+}
+
+int main() {
+  int opcao;
+  do {
+    printf("\nSelecione uma opcao:\n");
+    printf("1 - Deposito\n");
+    printf("2 - Saque\n");
+    printf("3 - Ver saldo\n");
+    printf("4 - Sair\n");
+    scanf("%d", &opcao);
+    switch (opcao) {
+      case 1:
+        deposito();
+        break;
+      case 2:
+        saque();
+        break;
+      case 3:
+        verSaldo();
+        break;
+      case 4:
+        printf("\nObrigado por usar nosso caixa eletronico!\n");
+        break;
+      default:
+        printf("\nOpcao invalida.\n");
+    }
+  } while (opcao != 4);
+  return 0;
+}
